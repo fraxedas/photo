@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using ExifLib;
 
 namespace photo
 {
@@ -9,7 +8,19 @@ namespace photo
     {
         public string Parse(string path)
         {
-            return string.Empty;
+            var reader = new ExifReader(path);
+            var builder = new StringBuilder();
+
+            foreach (object value in Enum.GetValues(typeof (ExifTags)))
+            {
+                object tag;
+                if (reader.GetTagValue((ExifTags) value, out tag))
+                {
+                    builder.AppendLine(string.Format("{0}={1}", value, tag));
+                }
+            }
+
+            return builder.ToString();
         }
     }
 }

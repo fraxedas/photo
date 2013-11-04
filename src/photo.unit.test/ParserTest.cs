@@ -3,27 +3,26 @@ using NUnit.Framework;
 
 namespace photo.unit.test
 {
-    [TestFixture]
+    [TestFixture("Images/Canon PowerShot SX500 IS.JPG")]
+    [TestFixture("Images/Nikon COOLPIX P510.JPG")]
+    [TestFixture("Images/Panasonic Lumix DMC-FZ200.JPG")]
     public class ParserTest
     {
-        #region Setup/Teardown
-
-        [SetUp]
-        public void Setup()
+        public ParserTest(string path)
         {
+            _path = path;
             _parser = new Parser();
         }
 
-        #endregion
-
-        private Parser _parser;
+        private readonly string _path;
+        private readonly Parser _parser;
 
         [Test]
-        public void Test_parse_return_same_data()
+        public void Test_parse_return_some_data()
         {
-            string data = _parser.Parse("Images/Canon PowerShot SX500 IS.JPG");
+            string data = _parser.Parse(_path);
             Console.Out.WriteLine("data = {0}", data);
-            Assert.That(data, Is.Not.Empty);
+            Assert.That(data, Is.Not.Null);
         }
     }
 }
