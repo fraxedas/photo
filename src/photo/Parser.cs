@@ -7,5 +7,9 @@ namespace photo
 {
     public class Parser
     {
+        public string Parse(string path)
+        {
+            return string.Empty;
+        }
     }
 }
