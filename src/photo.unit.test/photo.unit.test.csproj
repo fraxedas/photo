@@ -78,6 +78,10 @@
       <Link>Images\Panasonic Lumix DMC-FZ200.JPG</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\..\images\Samsung SIII.jpg">
+      <Link>Images\Samsung SIII.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
