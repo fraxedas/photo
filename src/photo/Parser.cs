@@ -37,7 +37,7 @@ namespace photo
 
             foreach (PropertyItem item in propItems)
             {
-                builder.AppendLine(string.Format("{0} = {1}", item.Id, item.Value.ConvertTo((ExifType)item.Type)));
+                builder.AppendLine(string.Format("{0} = {1}", item.Id, item.Value.ConvertTo((ExifType)item.Type, item.Len)));
             }
 
             return builder.ToString();
