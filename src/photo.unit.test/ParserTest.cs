@@ -25,13 +25,5 @@ namespace photo.unit.test
             Console.Out.WriteLine(data);
             Assert.That(data, Is.Not.Null);
         }
-
-        [Test]
-        public void Test_parse2_return_some_data()
-        {
-            string data = _parser.Parse2(_path);
-            Console.Out.WriteLine(data);
-            Assert.That(data, Is.Not.Null);
-        }
     }
 }
