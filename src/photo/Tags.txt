@@ -1,1083 +1,1316 @@
-Title GpsVer
+GpsVer
 Version of the Global Positioning Systems (GPS) IFD, given as 2.0.0.0. This tag is mandatory when the Title GpsIFD tag is present. When the version is 2.0.0.0, the tag value is 0x02000000.
-Tag 0x0000 
-Type Byte Count4
+0x0000 
+Byte
+4
  
-Title GpsLatitudeRef
+GpsLatitudeRef
 Null-terminated character string that specifies whether the latitude is north or south. N specifies north latitude, and S specifies south latitude.
-Tag 0x0001 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0001 
+ASCII
+2
  
-Title GpsLatitude
+GpsLatitude
 Latitude. Latitude is expressed as three rational values giving the degrees, minutes, and seconds respectively. When degrees, minutes, and seconds are expressed, the format is dd/1, mm/1, ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is dd/1, mmmm/100, 0/1.
-Tag 0x0002 
-Type Rational Count3
+0x0002 
+Rational
+3
  
-Title GpsLongitudeRef
+GpsLongitudeRef
 Null-terminated character string that specifies whether the longitude is east or west longitude. E specifies east longitude, and W specifies west longitude.
-Tag 0x0003 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0003 
+ASCII
+2
  
-Title GpsLongitude
+GpsLongitude
 Longitude. Longitude is expressed as three rational values giving the degrees, minutes, and seconds respectively. When degrees, minutes and seconds are expressed, the format is ddd/1, mm/1, ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is ddd/1, mmmm/100, 0/1.
-Tag 0x0004 
-Type Rational Count3
+0x0004 
+Rational
+3
  
-Title GpsAltitudeRef
+GpsAltitudeRef
 Reference altitude, in meters.
-Tag 0x0005 
-Type Byte Count1
+0x0005 
+Byte
+1
  
-Title GpsAltitude
+GpsAltitude
 Altitude, in meters, based on the reference altitude specified by Title GpsAltitudeRef.
-Tag 0x0006 
-Type Rational Count1
+0x0006 
+Rational
+1
  
-Title GpsGpsTime
+GpsGpsTime
 Time as coordinated universal time (UTC). The value is expressed as three rational numbers that give the hour, minute, and second.
-Tag 0x0007 
-Type Rational Count3
+0x0007 
+Rational
+3
  
-Title GpsGpsSatellites
+GpsGpsSatellites
 Null-terminated character string that specifies the GPS satellites used for measurements. This tag can be used to specify the ID number, angle of elevation, azimuth, SNR, and other information about each satellite. The format is not specified. If the GPS receiver is incapable of taking measurements, the value of the tag must be set to NULL.
-Tag 0x0008 
-Type ASCII CountLength of the string including the NULL terminator
+0x0008 
+ASCII
+Length of the string including the NULL terminator
  
-Title GpsGpsStatus
+GpsGpsStatus
 Null-terminated character string that specifies the status of the GPS receiver when the image is recorded. A means measurement is in progress, and V means the measurement is Interoperability.
-Tag 0x0009 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0009 
+ASCII
+2
  
-Title GpsGpsMeasureMode
+GpsGpsMeasureMode
 Null-terminated character string that specifies the GPS measurement mode. 2 specifies 2-D measurement, and 3 specifies 3-D measurement.
-Tag 0x000A 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x000A 
+ASCII
+2
  
-Title GpsGpsDop
+GpsGpsDop
 GPS DOP (data degree of precision). An HDOP value is written during 2-D measurement, and a PDOP value is written during 3-D measurement.
-Tag 0x000B 
-Type Rational Count1
+0x000B 
+Rational
+1
  
-Title GpsSpeedRef
+GpsSpeedRef
 Null-terminated character string that specifies the unit used to express the GPS receiver speed of movement. K, M, and N represent kilometers per hour, miles per hour, and knots respectively.
-Tag 0x000C 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x000C 
+ASCII
+2
  
-Title GpsSpeed
+GpsSpeed
 Speed of the GPS receiver movement.
-Tag 0x000D 
-Type Rational Count1
+0x000D 
+Rational
+1
  
-Title GpsTrackRef
+GpsTrackRef
 Null-terminated character string that specifies the reference for giving the direction of GPS receiver movement. T specifies true direction, and M specifies magnetic direction.
-Tag 0x000E 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x000E 
+ASCII
+2
  
-Title GpsTrack
+GpsTrack
 Direction of GPS receiver movement. The range of values is from 0.00 to 359.99.
-Tag 0x000F 
-Type Rational Count1
+0x000F 
+Rational
+1
  
-Title GpsImgDirRef
+GpsImgDirRef
 Null-terminated character string that specifies the reference for the direction of the image when it is captured. T specifies true direction, and M specifies magnetic direction.
-Tag 0x0010 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0010 
+ASCII
+2
  
-Title GpsImgDir
+GpsImgDir
 Direction of the image when it was captured. The range of values is from 0.00 to 359.99.
-Tag 0x0011 
-Type Rational Count1
+0x0011 
+Rational
+1
  
-Title GpsMapDatum
+GpsMapDatum
 Null-terminated character string that specifies geodetic survey data used by the GPS receiver. If the survey data is restricted to Japan, the value of this tag is TOKYO or WGS-84.
-Tag 0x0012 
-Type ASCII CountLength of the string including the NULL terminator
+0x0012 
+ASCII
+Length of the string including the NULL terminator
  
-Title GpsDestLatRef
+GpsDestLatRef
 Null-terminated character string that specifies whether the latitude of the destination point is north or south latitude. N specifies north latitude, and S specifies south latitude.
-Tag 0x0013 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0013 
+ASCII
+2
  
-Title GpsDestLat
+GpsDestLat
 Latitude of the destination point. The latitude is expressed as three rational values giving the degrees, minutes, and seconds respectively. When degrees, minutes, and seconds are expressed, the format is dd/1, mm/1, ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is dd/1, mmmm/100, 0/1.
-Tag 0x0014 
-Type Rational Count3
+0x0014 
+Rational
+3
  
-Title GpsDestLongRef
+GpsDestLongRef
 Null-terminated character string that specifies whether the longitude of the destination point is east or west longitude. E specifies east longitude, and W specifies west longitude.
-Tag 0x0015 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0015 
+ASCII
+2
  
-Title GpsDestLong
+GpsDestLong
 Longitude of the destination point. The longitude is expressed as three rational values giving the degrees, minutes, and seconds respectively. When degrees, minutes, and seconds are expressed, the format is ddd/1, mm/1, ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is ddd/1, mmmm/100, 0/1.
-Tag 0x0016 
-Type Rational Count3
+0x0016 
+Rational
+3
  
-Title GpsDestBearRef
+GpsDestBearRef
 Null-terminated character string that specifies the reference used for giving the bearing to the destination point. T specifies true direction, and M specifies magnetic direction.
-Tag 0x0017 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0017 
+ASCII
+2
  
-Title GpsDestBear
+GpsDestBear
 Bearing to the destination point. The range of values is from 0.00 to 359.99.
-Tag 0x0018 
-Type Rational Count1
+0x0018 
+Rational
+1
  
-Title GpsDestDistRef
+GpsDestDistRef
 Null-terminated character string that specifies the unit used to express the distance to the destination point. K, M, and N represent kilometers, miles, and knots respectively.
-Tag 0x0019 
-Type ASCII Count2 (one character plus the NULL terminator)
+0x0019 
+ASCII
+2
  
-Title GpsDestDist
+GpsDestDist
 Distance to the destination point.
-Tag 0x001A 
-Type Rational Count1
+0x001A 
+Rational
+1
  
-Title NewSubfileType
-Type  of data in a subfile.
-Tag 0x00FE 
-Type Long Count1
+NewSubfileType
+ of data in a subfile.
+0x00FE 
+Long
+1
  
-Title SubfileType
-Type  of data in a subfile.
-Tag 0x00FF 
-Type Short Count1
+SubfileType
+ of data in a subfile.
+0x00FF 
+Short
+1
  
-Title ImageWidth
+ImageWidth
 Number of pixels per row.
-Tag 0x0100 
-Type Short or Title TypeLong Count1
+0x0100 
+Short or Title
+Long
+1
  
-Title ImageHeight
+ImageHeight
 Number of pixel rows.
-Tag 0x0101 
-Type Short or Title TypeLong Count1
+0x0101 
+Short or Title
+Long
+1
  
-Title BitsPerSample
+BitsPerSample
 Number of bits per color component. See also Title SamplesPerPixel.
-Tag 0x0102 
-Type Short CountNumber of samples (components) per pixel
+0x0102 
+Short
+Number of samples (components) per pixel
  
-Title Compression
+Compression
 Compression scheme used for the image data.
-Tag 0x0103 
-Type Short Count1
+0x0103 
+Short
+1
  
-Title PhotometricInterp
+PhotometricInterp
 How pixel data will be interpreted.
-Tag 0x0106 
-Type Short Count1
+0x0106 
+Short
+1
  
-Title ThreshHolding
+ThreshHolding
 Technique used to convert from gray pixels to black and white pixels.
-Tag 0x0107 
-Type Short Count1
+0x0107 
+Short
+1
  
-Title CellWidth
+CellWidth
 Width of the dithering or halftoning matrix.
-Tag 0x0108 
-Type Short Count1
+0x0108 
+Short
+1
  
-Title CellHeight
+CellHeight
 Height of the dithering or halftoning matrix.
-Tag 0x0109 
-Type Short Count1
+0x0109 
+Short
+1
  
-Title FillOrder
+FillOrder
 Logical order of bits in a byte.
-Tag 0x010A 
-Type Short Count1
+0x010A 
+Short
+1
  
-Title DocumentName
+DocumentName
 Null-terminated character string that specifies the name of the document from which the image was scanned.
-Tag 0x010D 
-Type ASCII CountLength of the string including the NULL terminator
+0x010D 
+ASCII
+Length of the string including the NULL terminator
  
-Title ImageDescription
+ImageDescription
 Null-terminated character string that specifies the title of the image.
-Tag 0x010E 
-Type ASCII CountLength of the string including the NULL terminator
+0x010E 
+ASCII
+Length of the string including the NULL terminator
  
-Title EquipMake
+EquipMake
 Null-terminated character string that specifies the manufacturer of the equipment used to record the image.
-Tag 0x010F 
-Type ASCII CountLength of the string including the NULL terminator
+0x010F 
+ASCII
+Length of the string including the NULL terminator
  
-Title EquipModel
+EquipModel
 Null-terminated character string that specifies the model name or model number of the equipment used to record the image.
-Tag 0x0110 
-Type ASCII CountLength of the string including the NULL terminator
+0x0110 
+ASCII
+Length of the string including the NULL terminator
  
-Title StripOffsets
+StripOffsets
 For each strip, the byte offset of that strip. See also Title RowsPerStrip and Title StripBytesCount.
-Tag 0x0111 
-Type Short or Title TypeLong CountNumber of strips
+0x0111 
+Short or Title
+Long
+Number of strips
  
-Title Orientation
+Orientation
 Image orientation viewed in terms of rows and columns.
-Tag 0x0112 
-Type Short Count1 1 - The 0th row is at the top of the visual image, and the 0th column is the visual left side. 2 - The 0th row is at the visual top of the image, and the 0th column is the visual right side. 3 - The 0th row is at the visual bottom of the image, and the 0th column is the visual right side. 4 - The 0th row is at the visual bottom of the image, and the 0th column is the visual left side. 5 - The 0th row is the visual left side of the image, and the 0th column is the visual top. 6 - The 0th row is the visual right side of the image, and the 0th column is the visual top. 7 - The 0th row is the visual right side of the image, and the 0th column is the visual bottom. 8 - The 0th row is the visual left side of the image, and the 0th column is the visual bottom.
+0x0112 
+Short
+1 1 - The 0th row is at the top of the visual image, and the 0th column is the visual left side. 2 - The 0th row is at the visual top of the image, and the 0th column is the visual right side. 3 - The 0th row is at the visual bottom of the image, and the 0th column is the visual right side. 4 - The 0th row is at the visual bottom of the image, and the 0th column is the visual left side. 5 - The 0th row is the visual left side of the image, and the 0th column is the visual top. 6 - The 0th row is the visual right side of the image, and the 0th column is the visual top. 7 - The 0th row is the visual right side of the image, and the 0th column is the visual bottom. 8 - The 0th row is the visual left side of the image, and the 0th column is the visual bottom.
  
-Title SamplesPerPixel
+SamplesPerPixel
 Number of color components per pixel.
-Tag 0x0115 
-Type Short Count1
+0x0115 
+Short
+1
  
-Title RowsPerStrip
+RowsPerStrip
 Number of rows per strip. See also Title StripBytesCount and Title StripOffsets.
-Tag 0x0116 
-Type Short or Title TypeLong Count1
+0x0116 
+Short or Title
+Long
+1
  
-Title StripBytesCount
+StripBytesCount
 For each strip, the total number of bytes in that strip.
-Tag 0x0117 
-Type Short or Title TypeLong CountNumber of strips
+0x0117 
+Short or Title
+Long
+Number of strips
  
-Title MinSampleValue
+MinSampleValue
 For each color component, the minimum value assigned to that component. See also Title SamplesPerPixel.
-Tag 0x0118 
-Type Short CountNumber of samples (components) per pixel
+0x0118 
+Short
+Number of samples (components) per pixel
  
-Title MaxSampleValue
+MaxSampleValue
 For each color component, the maximum value assigned to that component. See also Title SamplesPerPixel.
-Tag 0x0119 
-Type Short CountNumber of samples (components) per pixel
+0x0119 
+Short
+Number of samples (components) per pixel
  
-Title XResolution
+XResolution
 Number of pixels per unit in the image width (x) direction. The unit is specified by Title ResolutionUnit.
-Tag 0x011A 
-Type Rational Count1
+0x011A 
+Rational
+1
  
-Title YResolution
+YResolution
 Number of pixels per unit in the image height (y) direction. The unit is specified by Title ResolutionUnit.
-Tag 0x011B 
-Type Rational Count1
+0x011B 
+Rational
+1
  
-Title PlanarConfig
+PlanarConfig
 Whether pixel components are recorded in chunky or planar format.
-Tag 0x011C 
-Type Short Count1
+0x011C 
+Short
+1
  
-Title PageName
+PageName
 Null-terminated character string that specifies the name of the page from which the image was scanned.
-Tag 0x011D 
-Type ASCII CountLength of the string including the NULL terminator
+0x011D 
+ASCII
+Length of the string including the NULL terminator
  
-Title XPosition
+XPosition
 Offset from the left side of the page to the left side of the image. The unit of measure is specified by Title ResolutionUnit.
-Tag 0x011E 
-Type Rational Count1
+0x011E 
+Rational
+1
  
-Title YPosition
+YPosition
 Offset from the top of the page to the top of the image. The unit of measure is specified by Title ResolutionUnit.
-Tag 0x011F 
-Type Rational Count1
+0x011F 
+Rational
+1
  
-Title FreeOffset
+FreeOffset
 For each string of contiguous unused bytes, the byte offset of that string.
-Tag 0x0120 
-Type Long
+0x0120 
+Long
  
-Title FreeByteCounts
+FreeByteCounts
 For each string of contiguous unused bytes, the number of bytes in that string.
-Tag 0x0121 
-Type Long CountNumber of strings of contiguous unused bytes.
+0x0121 
+Long
+Number of strings of contiguous unused bytes.
  
-Title GrayResponseUnit
+GrayResponseUnit
 Precision of the number specified by Title GrayResponseCurve. 1 specifies tenths, 2 specifies hundredths, 3 specifies thousandths, and so on.
-Tag 0x0122 
-Type Short Count1
+0x0122 
+Short
+1
  
-Title GrayResponseCurve
+GrayResponseCurve
 For each possible pixel value in a grayscale image, the optical density of that pixel value.
-Tag 0x0123 
-Type Short CountNumber of possible pixel values
+0x0123 
+Short
+Number of possible pixel values
  
-Title T4Option
+T4Option
 Set of flags that relate to T4 encoding.
-Tag 0x0124 
-Type Long Count1
+0x0124 
+Long
+1
  
-Title T6Option
+T6Option
 Set of flags that relate to T6 encoding.
-Tag 0x0125 
-Type Long Count1
+0x0125 
+Long
+1
  
-Title ResolutionUnit
+ResolutionUnit
 Unit of measure for the horizontal resolution and the vertical resolution.
-Tag 0x0128 
-Type Short Count1 2 - inch 3 - centimeter
+0x0128 
+Short
+1 2 - inch 3 - centimeter
  
-Title PageNumber
+PageNumber
 Page number of the page from which the image was scanned.
-Tag 0x0129 
-Type Short Count1
+0x0129 
+Short
+1
  
-Title TransferFunction
+TransferFunction
 Tables that specify transfer functions for the image.
-Tag 0x012D 
-Type Short CountTotal number of 16-bit words required for the tables
+0x012D 
+Short
+Total number of 16-bit words required for the tables
  
-Title SoftwareUsed
+SoftwareUsed
 Null-terminated character string that specifies the name and version of the software or firmware of the device used to generate the image.
-Tag 0x0131 
-Type ASCII CountLength of the string including the NULL terminator
+0x0131 
+ASCII
+Length of the string including the NULL terminator
  
-Title DateTime
+DateTime
 Date and time the image was created.
-Tag 0x0132 
-Type ASCII Count20
+0x0132 
+ASCII
+20
  
-Title Artist
+Artist
 Null-terminated character string that specifies the name of the person who created the image.
-Tag 0x013B 
-Type ASCII CountLength of the string including the NULL terminator
+0x013B 
+ASCII
+Length of the string including the NULL terminator
  
-Title HostComputer
+HostComputer
 Null-terminated character string that specifies the computer and/or operating system used to create the image.
-Tag 0x013C 
-Type ASCII CountLength of the string including the NULL terminator
+0x013C 
+ASCII
+Length of the string including the NULL terminator
  
-Title Predictor
-Type  of prediction scheme that was applied to the image data before the encoding scheme was applied.
-Tag 0x013D 
-Type Short Count1
+Predictor
+ of prediction scheme that was applied to the image data before the encoding scheme was applied.
+0x013D 
+Short
+1
  
-Title WhitePoint
+WhitePoint
 Chromaticity of the white point of the image.
-Tag 0x013E 
-Type Rational Count2
+0x013E 
+Rational
+2
  
-Title PrimaryChromaticities
+PrimaryChromaticities
 For each of the three primary colors in the image, the chromaticity of that color.
-Tag 0x013F 
-Type Rational Count6
+0x013F 
+Rational
+6
  
-Title ColorMap
+ColorMap
 Color palette (lookup table) for a palette-indexed image.
-Tag 0x0140 
-Type Short CountNumber of 16-bit words required for the palette
+0x0140 
+Short
+Number of 16-bit words required for the palette
  
-Title HalftoneHints
+HalftoneHints
 Information used by the halftone function
-Tag 0x0141 
-Type Short Count2
+0x0141 
+Short
+2
  
-Title TileWidth
+TileWidth
 Number of pixel columns in each tile.
-Tag 0x0142 
-Type Short or Title TypeLong Count1
+0x0142 
+Short or Title
+Long
+1
  
-Title TileLength
+TileLength
 Number of pixel rows in each tile.
-Tag 0x0143 
-Type Short or Title TypeLong Count1
+0x0143 
+Short or Title
+Long
+1
  
-Title TileOffset
+TileOffset
 For each tile, the byte offset of that tile.
-Tag 0x0144 
-Type Long CountNumber of tiles
+0x0144 
+Long
+Number of tiles
  
-Title TileByteCounts
+TileByteCounts
 For each tile, the number of bytes in that tile.
-Tag 0x0145 
-Type Short or Title TypeLong CountNumber of tiles
+0x0145 
+Short or Title
+Long
+Number of tiles
  
-Title InkSet
+InkSet
 Set of inks used in a separated image.
-Tag 0x014C 
-Type Short Count1
+0x014C 
+Short
+1
  
-Title InkNames
+InkNames
 Sequence of concatenated, null-terminated, character strings that specify the names of the inks used in a separated image.
-Tag 0x014D 
-Type ASCII CountTotal length of the sequence of strings including the NULL terminators
+0x014D 
+ASCII
+Total length of the sequence of strings including the NULL terminators
  
-Title NumberOfInks
+NumberOfInks
 Number of inks.
-Tag 0x014E 
-Type Short Count1
+0x014E 
+Short
+1
  
-Title DotRange
+DotRange
 Color component values that correspond to a 0 percent dot and a 100 percent dot.
-Tag 0x0150 
-Type Byte or Title TypeShort Count2 or 2×Title SamplesPerPixel
+0x0150 
+Byte or Title
+Short
+2 or 2×Title SamplesPerPixel
  
-Title TargetPrinter
+TargetPrinter
 Null-terminated character string that describes the intended printing environment.
-Tag 0x0151 
-Type ASCII CountLength of the string including the NULL terminator
+0x0151 
+ASCII
+Length of the string including the NULL terminator
  
-Title ExtraSamples
+ExtraSamples
 Number of extra color components. For example, one extra component might hold an alpha value.
-Tag 0x0152 
-Type Short Count1
+0x0152 
+Short
+1
  
-Title SampleFormat
+SampleFormat
 For each color component, the numerical format (unsigned, signed, floating point) of that component. See also Title SamplesPerPixel.
-Tag 0x0153 
-Type Short CountNumber of samples (components) per pixel
+0x0153 
+Short
+Number of samples (components) per pixel
  
-Title SMinSampleValue
+SMinSampleValue
 For each color component, the minimum value of that component. See also Title SamplesPerPixel.
-Tag 0x0154 TypeThe type that best matches the pixel component data CountNumber of samples (components) per pixel
+0x0154
+The type that best matches the pixel component data
+Number of samples (components) per pixel
  
-Title SMaxSampleValue
+SMaxSampleValue
 For each color component, the maximum value of that component. See also Title SamplesPerPixel.
-Tag 0x0155 TypeThe type that best matches the pixel component data CountNumber of samples (components) per pixel
+0x0155
+The type that best matches the pixel component data
+Number of samples (components) per pixel
  
-Title TransferRange
+TransferRange
 Table of values that extends the range of the transfer function.
-Tag 0x0156 
-Type Short Count6
+0x0156 
+Short
+6
  
-Title JPEGProc
+JPEGProc
 JPEG compression process.
-Tag 0x0200 
-Type Short Count1
+0x0200 
+Short
+1
  
-Title JPEGInterFormat
+JPEGInterFormat
 Offset to the start of a JPEG bitstream.
-Tag 0x0201 
-Type Long Count1
+0x0201 
+Long
+1
  
-Title JPEGInterLength
+JPEGInterLength
 Length, in bytes, of the JPEG bitstream.
-Tag 0x0202 
-Type Long Count1
+0x0202 
+Long
+1
  
-Title JPEGRestartInterval
+JPEGRestartInterval
 Length of the restart interval.
-Tag 0x0203 
-Type Short Count1
+0x0203 
+Short
+1
  
-Title JPEGLosslessPredictors
+JPEGLosslessPredictors
 For each color component, a lossless predictor-selection value for that component. See also Title SamplesPerPixel.
-Tag 0x0205 
-Type Short CountNumber of samples (components) per pixel
+0x0205 
+Short
+Number of samples (components) per pixel
  
-Title JPEGPointTransforms
+JPEGPointTransforms
 For each color component, a point transformation value for that component. See also Title SamplesPerPixel.
-Tag 0x0206 
-Type Short CountNumber of samples (components) per pixel
+0x0206 
+Short
+Number of samples (components) per pixel
  
-Title JPEGQTables
+JPEGQTables
 For each color component, the offset to the quantization table for that component. See also Title SamplesPerPixel.
-Tag 0x0207 
-Type Long CountNumber of samples (components) per pixel
+0x0207 
+Long
+Number of samples (components) per pixel
  
-Title JPEGDCTables
+JPEGDCTables
 For each color component, the offset to the DC Huffman table (or lossless Huffman table) for that component. See also Title SamplesPerPixel.
-Tag 0x0208 
-Type Long CountNumber of samples (components) per pixel
+0x0208 
+Long
+Number of samples (components) per pixel
  
-Title JPEGACTables
+JPEGACTables
 For each color component, the offset to the AC Huffman table for that component. See also Title SamplesPerPixel.
-Tag 0x0209 
-Type Long CountNumber of samples (components) per pixel
+0x0209 
+Long
+Number of samples (components) per pixel
  
-Title YCbCrCoefficients
+YCbCrCoefficients
 Coefficients for transformation from RGB to YCbCr image data.
-Tag 0x0211 
-Type Rational Count3
+0x0211 
+Rational
+3
  
-Title YCbCrSubsampling
+YCbCrSubsampling
 Sampling ratio of chrominance components in relation to the luminance component.
-Tag 0x0212 
-Type Short Count2
+0x0212 
+Short
+2
  
-Title YCbCrPositioning
+YCbCrPositioning
 Position of chrominance components in relation to the luminance component.
-Tag 0x0213 
-Type Short Count1
+0x0213 
+Short
+1
  
-Title REFBlackWhite
+REFBlackWhite
 Reference black point value and reference white point value.
-Tag 0x0214 
-Type Rational Count6
+0x0214 
+Rational
+6
  
-Title Gamma
+Gamma
 Gamma value attached to the image. The gamma value is stored as a rational number (pair of long) with a numerator of 100000. For example, a gamma value of 2.2 is stored as the pair (100000, 45455).
-Tag 0x0301 
-Type Rational Count1
+0x0301 
+Rational
+1
  
-Title ICCProfileDescriptor
+ICCProfileDescriptor
 Null-terminated character string that identifies an ICC profile.
-Tag 0x0302 
-Type ASCII CountLength of the string including the NULL terminator
+0x0302 
+ASCII
+Length of the string including the NULL terminator
  
-Title SRGBRenderingIntent
+SRGBRenderingIntent
 How the image should be displayed as defined by the International Color Consortium (ICC). If a GDI+  Image object is constructed with the useEmbeddedColorManagement parameter set to TRUE, then GDI+ renders the image according to the specified rendering intent. The intent can be set to perceptual, relative colorimetric, saturation, or absolute colorimetric.
 Perceptual intent, which is suitable for photographs, gives good adaptation to the display device gamut at the expense of colorimetric accuracy.
 Relative colorimetric intent is suitable for images (for example, logos) that require color appearance matching that is relative to the display device white point.
 Saturation intent, which is suitable for charts and graphs, preserves saturation at the expense of hue and lightness.
 Absolute colorimetric intent is suitable for proofs (previews of images destined for a different display device) that require preservation of absolute colorimetry.
-Tag 0x0303 TypeBYTE Count1 0 - perceptual 1 - relative colorimetric 2 - saturation 3 - absolute colorimetric
+0x0303 
+BYTE
+1 0 - perceptual 1 - relative colorimetric 2 - saturation 3 - absolute colorimetric
  
-Title ImageTitle
+ImageTitle
 Null-terminated character string that specifies the title of the image.
-Tag 0x0320 
-Type ASCII CountLength of the string including the NULL terminator
+0x0320 
+ASCII
+Length of the string including the NULL terminator
  
-Title ResolutionXUnit
+ResolutionXUnit
 Units in which to display horizontal resolution.
-Tag 0x5001 
-Type Short Count1 1 - pixels per inch 2 - pixels per centimeter
+0x5001 
+Short
+1 1 - pixels per inch 2 - pixels per centimeter
  
-Title ResolutionYUnit
+ResolutionYUnit
 Units in which to display vertical resolution.
-Tag 0x5002 
-Type Short Count1 1 - pixels per inch 2 - pixels per centimeter
+0x5002 
+Short
+1 1 - pixels per inch 2 - pixels per centimeter
  
-Title ResolutionXLengthUnit
+ResolutionXLengthUnit
 Units in which to display the image width.
-Tag 0x5003 
-Type Short Count1 1 - inches 2 - centimeters 3 - points 4 - picas 5 - columns
+0x5003 
+Short
+1 1 - inches 2 - centimeters 3 - points 4 - picas 5 - columns
  
-Title ResolutionYLengthUnit
+ResolutionYLengthUnit
 Units in which to display the image height.
-Tag 0x5004 
-Type Short Count1 1 - inches 2 - centimeters 3 - points 4 - picas 5 - columns
+0x5004 
+Short
+1 1 - inches 2 - centimeters 3 - points 4 - picas 5 - columns
  
-Title PrintFlags
+PrintFlags
 Sequence of one-byte Boolean values that specify printing options.
-Tag 0x5005 
-Type ASCII CountNumber of flags
+0x5005 
+ASCII
+Number of flags
  
-Title PrintFlagsVersion
+PrintFlagsVersion
 Print flags version.
-Tag 0x5006 
-Type Short Count1
+0x5006 
+Short
+1
  
-Title PrintFlagsCrop
+PrintFlagsCrop
 Print flags center crop marks.
-Tag 0x5007 
-Type Byte Count1
+0x5007 
+Byte
+1
  
-Title PrintFlagsBleedWidth
+PrintFlagsBleedWidth
 Print flags bleed width.
-Tag 0x5008 
-Type Long Count1
+0x5008 
+Long
+1
  
-Title PrintFlagsBleedWidthScale
+PrintFlagsBleedWidthScale
 Print flags bleed width scale.
-Tag 0x5009 
-Type Short Count1
+0x5009 
+Short
+1
  
-Title HalftoneLPI
+HalftoneLPI
 Ink's screen frequency, in lines per inch.
-Tag 0x500A 
-Type Rational Count1
+0x500A 
+Rational
+1
  
-Title HalftoneLPIUnit
+HalftoneLPIUnit
 Units for the screen frequency.
-Tag 0x500B 
-Type Short Count1 1 - lines per inch 2 - lines per centimeter
+0x500B 
+Short
+1 1 - lines per inch 2 - lines per centimeter
  
-Title HalftoneDegree
+HalftoneDegree
 Angle for screen.
-Tag 0x500C 
-Type Rational Count1
+0x500C 
+Rational
+1
  
-Title HalftoneShape
+HalftoneShape
 Shape of the halftone dots.
-Tag 0x500D 
-Type Short Count1 0 - round 1 - ellipse 2 - line 3 - square 4 - cross 6 - diamond
+0x500D 
+Short
+1 0 - round 1 - ellipse 2 - line 3 - square 4 - cross 6 - diamond
  
-Title HalftoneMisc
+HalftoneMisc
 Miscellaneous halftone information.
-Tag 0x500E 
-Type Long Count1
+0x500E 
+Long
+1
  
-Title HalftoneScreen
+HalftoneScreen
 Boolean value that specifies whether to use the printer's default screens.
-Tag 0x500F 
-Type Byte Count1 1 - use printer's default screens 2 - other
+0x500F 
+Byte
+1 1 - use printer's default screens 2 - other
  
-Title JPEGQuality
+JPEGQuality
 Private tag used by the Adobe Photoshop format. Not for public use.
-Tag 0x5010 
-Type Short CountAny
+0x5010 
+Short
+Any
  
-Title GridSize
+GridSize
 Block of information about grids and guides.
-Tag 0x5011 
-Type Undefined CountAny
+0x5011 
+Undefined
+Any
  
-Title ThumbnailFormat
+ThumbnailFormat
 Format of the thumbnail image.
-Tag 0x5012 
-Type Long Count1 0 - raw RGB 1 - JPEG
+0x5012 
+Long
+1 0 - raw RGB 1 - JPEG
  
-Title ThumbnailWidth
+ThumbnailWidth
 Width, in pixels, of the thumbnail image.
-Tag 0x5013 
-Type Long Count1
+0x5013 
+Long
+1
  
-Title ThumbnailHeight
+ThumbnailHeight
 Height, in pixels, of the thumbnail image.
-Tag 0x5014 
-Type Long Count1
+0x5014 
+Long
+1
  
-Title ThumbnailColorDepth
+ThumbnailColorDepth
 bits per pixel (BPP) for the thumbnail image.
-Tag 0x5015 
-Type Short Count1
+0x5015 
+Short
+1
  
-Title ThumbnailPlanes
+ThumbnailPlanes
 Number of color planes for the thumbnail image.
-Tag 0x5016 
-Type Short Count1
+0x5016 
+Short
+1
  
-Title ThumbnailRawBytes
+ThumbnailRawBytes
 Byte offset between rows of pixel data.
-Tag 0x5017 
-Type Long Count1
+0x5017 
+Long
+1
  
-Title ThumbnailSize
+ThumbnailSize
 Total size, in bytes, of the thumbnail image.
-Tag 0x5018 
-Type Long Count1
+0x5018 
+Long
+1
  
-Title ThumbnailCompressedSize
+ThumbnailCompressedSize
 Compressed size, in bytes, of the thumbnail image.
-Tag 0x5019 
-Type Long Count1
+0x5019 
+Long
+1
  
-Title ColorTransferFunction
+ColorTransferFunction
 Table of values that specify color transfer functions.
-Tag 0x501A 
-Type Undefined CountAny
+0x501A 
+Undefined
+Any
  
-Title ThumbnailData
+ThumbnailData
 Raw thumbnail bits in JPEG or RGB format. Depends on Title ThumbnailFormat.
-Tag 0x501B 
-Type Byte CountVariable
+0x501B 
+Byte
+Variable
  
-Title ThumbnailImageWidth
+ThumbnailImageWidth
 Number of pixels per row in the thumbnail image.
-Tag 0x5020 
-Type Short or Title TypeLong Count1
+0x5020 
+Short or Title
+Long
+1
  
-Title ThumbnailImageHeight
+ThumbnailImageHeight
 Number of pixel rows in the thumbnail image.
-Tag 0x5021 
-Type Short or Title TypeLong Count1
+0x5021 
+Short or Title
+Long
+1
  
-Title ThumbnailBitsPerSample
+ThumbnailBitsPerSample
 Number of bits per color component in the thumbnail image. See also Title ThumbnailSamplesPerPixel.
-Tag 0x5022 
-Type Short CountNumber of samples (components) per pixel in the thumbnail image
+0x5022 
+Short
+Number of samples (components) per pixel in the thumbnail image
  
-Title ThumbnailCompression
+ThumbnailCompression
 Compression scheme used for thumbnail image data.
-Tag 0x5023 
-Type Short Count1
+0x5023 
+Short
+1
  
-Title ThumbnailPhotometricInterp
+ThumbnailPhotometricInterp
 How thumbnail pixel data will be interpreted.
-Tag 0x5024 
-Type Short Count1
+0x5024 
+Short
+1
  
-Title ThumbnailImageDescription
+ThumbnailImageDescription
 Null-terminated character string that specifies the title of the image.
-Tag 0x5025 
-Type ASCII CountLength of the string including the NULL terminator
+0x5025 
+ASCII
+Length of the string including the NULL terminator
  
-Title ThumbnailEquipMake
+ThumbnailEquipMake
 Null-terminated character string that specifies the manufacturer of the equipment used to record the thumbnail image.
-Tag 0x5026 
-Type ASCII CountLength of the string including the NULL terminator
+0x5026 
+ASCII
+Length of the string including the NULL terminator
  
-Title ThumbnailEquipModel
+ThumbnailEquipModel
 Null-terminated character string that specifies the model name or model number of the equipment used to record the thumbnail image.
-Tag 0x5027 
-Type ASCII CountLength of the string including the NULL terminator
+0x5027 
+ASCII
+Length of the string including the NULL terminator
  
-Title ThumbnailStripOffsets
+ThumbnailStripOffsets
 For each strip in the thumbnail image, the byte offset of that strip. See also Title ThumbnailRowsPerStrip and Title ThumbnailStripBytesCount.
-Tag 0x5028 
-Type Short or Title TypeLong CountNumber of strips
+0x5028 
+Short or Title
+Long
+Number of strips
  
-Title ThumbnailOrientation
+ThumbnailOrientation
 Thumbnail image orientation in terms of rows and columns. See also Title Orientation.
-Tag 0x5029 
-Type Short Count1
+0x5029 
+Short
+1
  
-Title ThumbnailSamplesPerPixel
+ThumbnailSamplesPerPixel
 Number of color components per pixel in the thumbnail image.
-Tag 0x502A 
-Type Short Count1
+0x502A 
+Short
+1
  
-Title ThumbnailRowsPerStrip
+ThumbnailRowsPerStrip
 Number of rows per strip in the thumbnail image. See also Title ThumbnailStripBytesCount and Title ThumbnailStripOffsets.
-Tag 0x502B 
-Type Short or Title TypeLong Count1
+0x502B 
+Short or Title
+Long
+1
  
-Title ThumbnailStripBytesCount
+ThumbnailStripBytesCount
 For each thumbnail image strip, the total number of bytes in that strip.
-Tag 0x502C 
-Type Short or Title TypeLong CountNumber of strips in the thumbnail image
+0x502C 
+Short or Title
+Long
+Number of strips in the thumbnail image
  
-Title ThumbnailResolutionX
+ThumbnailResolutionX
 Thumbnail resolution in the width direction. The resolution unit is given in Title ThumbnailResolutionUnit.
-Tag 0x502D
+0x502D
  
-Title ThumbnailResolutionY
+ThumbnailResolutionY
 Thumbnail resolution in the height direction. The resolution unit is given in Title ThumbnailResolutionUnit.
-Tag 0x502E
+0x502E
  
-Title ThumbnailPlanarConfig
+ThumbnailPlanarConfig
 Whether pixel components in the thumbnail image are recorded in chunky or planar format. See also Title PlanarConfig.
-Tag 0x502F 
-Type Short Count1
+0x502F 
+Short
+1
  
-Title ThumbnailResolutionUnit
+ThumbnailResolutionUnit
 Unit of measure for the horizontal resolution and the vertical resolution of the thumbnail image. See also Title ResolutionUnit.
-Tag 0x5030 
-Type Short Count1
+0x5030 
+Short
+1
  
-Title ThumbnailTransferFunction
+ThumbnailTransferFunction
 Tables that specify transfer functions for the thumbnail image. See also Title TransferFunction.
-Tag 0x5031 
-Type Short CountTotal number of 16-bit words required for the tables
+0x5031 
+Short
+Total number of 16-bit words required for the tables
  
-Title ThumbnailSoftwareUsed
+ThumbnailSoftwareUsed
 Null-terminated character string that specifies the name and version of the software or firmware of the device used to generate the thumbnail image.
-Tag 0x5032 
-Type ASCII CountLength of the string including the NULL terminator
+0x5032 
+ASCII
+Length of the string including the NULL terminator
  
-Title ThumbnailDateTime
+ThumbnailDateTime
 Date and time the thumbnail image was created. See also Title DateTime.
-Tag 0x5033 
-Type ASCII Count20
+0x5033 
+ASCII
+20
  
-Title ThumbnailArtist
+ThumbnailArtist
 Null-terminated character string that specifies the name of the person who created the thumbnail image.
-Tag 0x5034 
-Type ASCII CountLength of the string including the NULL terminator
+0x5034 
+ASCII
+Length of the string including the NULL terminator
  
-Title ThumbnailWhitePoint
+ThumbnailWhitePoint
 Chromaticity of the white point of the thumbnail image. See also Title WhitePoint.
-Tag 0x5035 
-Type Rational Count2
+0x5035 
+Rational
+2
  
-Title ThumbnailPrimaryChromaticities
+ThumbnailPrimaryChromaticities
 For each of the three primary colors in the thumbnail image, the chromaticity of that color. See also Title PrimaryChromaticities.
-Tag 0x5036 
-Type Rational Count6
+0x5036 
+Rational
+6
  
-Title ThumbnailYCbCrCoefficients
+ThumbnailYCbCrCoefficients
 Coefficients for transformation from RGB to YCbCr data for the thumbnail image. See also Title YCbCrCoefficients.
-Tag 0x5037 
-Type Rational Count3
+0x5037 
+Rational
+3
  
-Title ThumbnailYCbCrSubsampling
+ThumbnailYCbCrSubsampling
 Sampling ratio of chrominance components in relation to the luminance component for the thumbnail image. See also Title YCbCrSubsampling.
-Tag 0x5038 
-Type Short Count2
+0x5038 
+Short
+2
  
-Title ThumbnailYCbCrPositioning
+ThumbnailYCbCrPositioning
 Position of chrominance components in relation to the luminance component for the thumbnail image. See also Title YCbCrPositioning.
-Tag 0x5039 
-Type Short Count1
+0x5039 
+Short
+1
  
-Title ThumbnailRefBlackWhite
+ThumbnailRefBlackWhite
 Reference black point value and reference white point value for the thumbnail image. See also Title REFBlackWhite.
-Tag 0x503A 
-Type Rational Count6
+0x503A 
+Rational
+6
  
-Title ThumbnailCopyRight
+ThumbnailCopyRight
 Null-terminated character string that contains copyright information for the thumbnail image.
-Tag 0x503B 
-Type ASCII CountLength of the string including the NULL terminator
+0x503B 
+ASCII
+Length of the string including the NULL terminator
  
-Title LuminanceTable
+LuminanceTable
 Luminance table. The luminance table and the chrominance table are used to control JPEG quality. A valid luminance or chrominance table has 64 entries of type Title TypeShort. If an image has either a luminance table or a chrominance table, then it must have both tables.
-Tag 0x5090 
-Type Short Count64
+0x5090 
+Short
+64
  
-Title ChrominanceTable
+ChrominanceTable
 Chrominance table. The luminance table and the chrominance table are used to control JPEG quality. A valid luminance or chrominance table has 64 entries of type Title TypeShort. If an image has either a luminance table or a chrominance table, then it must have both tables.
-Tag 0x5091 
-Type Short Count64
+0x5091 
+Short
+64
  
-Title FrameDelay
+FrameDelay
 Time delay, in hundredths of a second, between two frames in an animated GIF image.
-Tag 0x5100 
-Type Long CountNumber of frames in the image
+0x5100 
+Long
+Number of frames in the image
  
-Title LoopCount
+LoopCount
 For an animated GIF image, the number of times to display the animation. A value of 0 specifies that the animation should be displayed infinitely.
-Tag 0x5101 
-Type Short Count1
+0x5101 
+Short
+1
  
-Title GlobalPalette
+GlobalPalette
 Color palette for an indexed bitmap in a GIF image.
-Tag 0x5102 
-Type Byte Count3 x number of palette entries
+0x5102 
+Byte
+3 x number of palette entries
  
-Title IndexBackground
+IndexBackground
 Index of the background color in the palette of a GIF image.
-Tag 0x5103 
-Type Byte Count1
+0x5103 
+Byte
+1
  
-Title IndexTransparent
+IndexTransparent
 Index of the transparent color in the palette of a GIF image.
-Tag 0x5104 
-Type Byte Count1
+0x5104 
+Byte
+1
  
-Title PixelUnit
+PixelUnit
 Unit for Title PixelPerUnitX and Title PixelPerUnitY.
-Tag 0x5110 
-Type Byte Count1 0 - unknown
+0x5110 
+Byte
+1 0 - unknown
  
-Title PixelPerUnitX
+PixelPerUnitX
 Pixels per unit in the x direction.
-Tag 0x5111 
-Type Long Count1
+0x5111 
+Long
+1
  
-Title PixelPerUnitY
+PixelPerUnitY
 Pixels per unit in the y direction.
-Tag 0x5112 
-Type Long Count1
+0x5112 
+Long
+1
  
-Title PaletteHistogram
+PaletteHistogram
 Palette histogram.
-Tag 0x5113 
-Type Byte CountLength of the histogram
+0x5113 
+Byte
+Length of the histogram
  
-Title Copyright
+Copyright
 Null-terminated character string that contains copyright information.
-Tag 0x8298 
-Type ASCII CountLength of the string including the NULL terminator
+0x8298 
+ASCII
+Length of the string including the NULL terminator
  
-Title ExifExposureTime
+ExifExposureTime
 Exposure time, measured in seconds.
-Tag 0x829A 
-Type Rational Count1
+0x829A 
+Rational
+1
  
-Title ExifFNumber
+ExifFNumber
 F number.
-Tag 0x829D TypeRATIONAL Count1
+0x829D
+RATIONAL
+1
  
-Title ExifIFD
+ExifIFD
 Private tag used by GDI+. Not for public use. GDI+ uses this tag to locate Exif-specific information.
-Tag 0x8769 
-Type Long Count1
+0x8769 
+Long
+1
  
-Title ICCProfile
+ICCProfile
 ICC profile embedded in the image.
-Tag 0x8773 
-Type Byte CountLength of the profile
+0x8773 
+Byte
+Length of the profile
  
-Title ExifExposureProg
+ExifExposureProg
 Class of the program used by the camera to set exposure when the picture is taken.
-Tag 0x8822 TypeSHORT Count1 Default0 0 - not defined 1 - manual 2 - normal program 3 - aperture priority 4 - shutter priority 5 - creative program (biased toward depth of field) 6 - action program (biased toward fast shutter speed) 7 - portrait mode (for close-up photos with the background out of focus) 8 - landscape mode (for landscape photos with the background in focus) 9 to 255 - reserved
+0x8822
+SHORT
+1 Default0 0 - not defined 1 - manual 2 - normal program 3 - aperture priority 4 - shutter priority 5 - creative program (biased toward depth of field) 6 - action program (biased toward fast shutter speed) 7 - portrait mode (for close-up photos with the background out of focus) 8 - landscape mode (for landscape photos with the background in focus) 9 to 255 - reserved
  
-Title ExifSpectralSense
+ExifSpectralSense
 Null-terminated character string that specifies the spectral sensitivity of each channel of the camera used. The string is compatible with the standard developed by the ASTM Technical Committee.
-Tag 0x8824 
-Type ASCII CountLength of the string including the NULL terminator
+0x8824 
+ASCII
+Length of the string including the NULL terminator
  
-Title GpsIFD
+GpsIFD
 Offset to a block of GPS property items. Property items whose tags have the prefix Title Gps are stored in the GPS block. The GPS property items are defined in the EXIF specification. GDI+ uses this tag to locate GPS information, but GDI+ does not expose this tag for public use.
-Tag 0x8825 
-Type Long Count1
+0x8825 
+Long
+1
  
-Title ExifISOSpeed
+ExifISOSpeed
 ISO speed and ISO latitude of the camera or input device as specified in ISO 12232.
-Tag 0x8827 
-Type Short CountAny
+0x8827 
+Short
+Any
  
-Title ExifOECF
+ExifOECF
 Optoelectronic conversion function (OECF) specified in ISO 14524. The OECF is the relationship between the camera optical input and the image values.
-Tag 0x8828 
-Type Undefined CountAny
+0x8828 
+Undefined
+Any
  
-Title ExifVer
+ExifVer
 Version of the EXIF standard supported. Nonexistence of this field is taken to mean nonconformance to the standard. Conformance to the standard is indicated by recording 0210 as a 4-byte ASCII string. Because the type is Title TypeUndefined, there is no NULL terminator.
-Tag 0x9000 
-Type Undefined Count4 Default0210
+0x9000 
+Undefined
+4 Default0210
  
-Title ExifDTOrig
+ExifDTOrig
 Date and time when the original image data was generated. For a DSC, the date and time when the picture was taken. The format is YYYY:MM:DD HH:MM:SS with time shown in 24-hour format and the date and time separated by one blank character (0x2000). The character string length is 20 bytes including the NULL terminator. When the field is empty, it is treated as unknown.
-Tag 0x9003 
-Type ASCII Count20
+0x9003 
+ASCII
+20
  
-Title ExifDTDigitized
+ExifDTDigitized
 Date and time when the image was stored as digital data. If, for example, an image was captured by DSC and at the same time the file was recorded, then DateTimeOriginal and DateTimeDigitized will have the same contents.
 The format is YYYY:MM:DD HH:MM:SS with time shown in 24-hour format and the date and time separated by one blank character (0x2000). The character string length is 20 bytes including the NULL terminator. When the field is empty, it is treated as unknown.
-Tag 0x9004 
-Type ASCII Count20
+0x9004 
+ASCII
+20
  
-Title ExifCompConfig
+ExifCompConfig
 Information specific to compressed data. The channels of each component are arranged in order from the first component to the fourth. For uncompressed data, the data arrangement is given in the Title PhotometricInterp tag.
 However, because Title PhotometricInterp can only express the order of Y, Cb, and Cr, this tag is provided for cases when compressed data uses components other than Y, Cb, and Cr and to support other sequences.
-Tag 0x9101 
-Type Undefined Count4 Default4 5 6 0 (if RGB uncompressed) 1 2 3 0 (other cases) 0 - does not exist 1 - Y 2 - Cb 3 - Cr 4 - R 5 - G 6 - B Other - reserved
+0x9101 
+Undefined
+4 Default4 5 6 0 (if RGB uncompressed) 1 2 3 0 (other cases) 0 - does not exist 1 - Y 2 - Cb 3 - Cr 4 - R 5 - G 6 - B Other - reserved
  
-Title ExifCompBPP
+ExifCompBPP
 Information specific to compressed data. The compression mode used for a compressed image is indicated in unit BPP.
-Tag 0x9102 
-Type Rational Count1
+0x9102 
+Rational
+1
  
-Title ExifShutterSpeed
+ExifShutterSpeed
 Shutter speed. The unit is the Additive System of Photographic Exposure (APEX) value.
-Tag 0x9201 
-Type SRational Count1
+0x9201 
+SRational
+1
  
-Title ExifAperture
+ExifAperture
 Lens aperture. The unit is the APEX value.
-Tag 0x9202 
-Type Rational Count1
+0x9202 
+Rational
+1
  
-Title ExifBrightness
+ExifBrightness
 Brightness value. The unit is the APEX value. Ordinarily it is given in the range of -99.99 to 99.99.
-Tag 0x9203 
-Type SRational Count1
+0x9203 
+SRational
+1
  
-Title ExifExposureBias
+ExifExposureBias
 Exposure bias. The unit is the APEX value. Ordinarily it is given in the range -99.99 to 99.99.
-Tag 0x9204 
-Type SRational Count1
+0x9204 
+SRational
+1
  
-Title ExifMaxAperture
+ExifMaxAperture
 Smallest F number of the lens. The unit is the APEX value. Ordinarily it is given in the range of 00.00 to 99.99, but it is not limited to this range.
-Tag 0x9205 
-Type Rational Count1
+0x9205 
+Rational
+1
  
-Title ExifSubjectDist
+ExifSubjectDist
 Distance to the subject, measured in meters.
-Tag 0x9206 
-Type Rational Count1
+0x9206 
+Rational
+1
  
-Title ExifMeteringMode
+ExifMeteringMode
 Metering mode.
-Tag 0x9207 
-Type Short Count1 Default0 0 - unknown 1 - Average 2 - CenterWeightedAverage 3 - Spot 4 - MultiSpot 5 - Pattern 6 - Partial 7 to 254 - reserved 255 - other
+0x9207 
+Short
+1 Default0 0 - unknown 1 - Average 2 - CenterWeightedAverage 3 - Spot 4 - MultiSpot 5 - Pattern 6 - Partial 7 to 254 - reserved 255 - other
  
-Title ExifLightSource
-Type  of light source.
-Tag 0x9208 
-Type Short Count1 Default0 0 - unknown 1 - Daylight 2 - Flourescent 3 - Tungsten 17 - Standard Light A 18 - Standard Light B 19 - Standard Light C 20 - D55 21 - D65 22 - D75 23 to 254 - reserved 255 - other
+ExifLightSource
+ of light source.
+0x9208 
+Short
+1 Default0 0 - unknown 1 - Daylight 2 - Flourescent 3 - Tungsten 17 - Standard Light A 18 - Standard Light B 19 - Standard Light C 20 - D55 21 - D65 22 - D75 23 to 254 - reserved 255 - other
  
-Title ExifFlash
+ExifFlash
 Flash status. This tag is recorded when an image is taken using a strobe light (flash). Bit 0 indicates the flash firing status, and bits 1 and 2 indicate the flash return status.
-Tag 0x9209 
-Type Short Count1 Values for bit 0 that indicate whether the flash fired: 0b - flash did not fire 1b - flash fired Values for bits 1 and 2 that indicate the status of returned light: 00b - no strobe return detection function 01b - reserved 10b - strobe return light not detected 11b - strobe return light detected Resulting flash tag values: 0x0000 - flash did not fire 0x0001 - flash fired 0x0005 - strobe return light not detected
+0x9209 
+Short
+1 Values for bit 0 that indicate whether the flash fired: 0b - flash did not fire 1b - flash fired Values for bits 1 and 2 that indicate the status of returned light: 00b - no strobe return detection function 01b - reserved 10b - strobe return light not detected 11b - strobe return light detected Resulting flash tag values: 0x0000 - flash did not fire 0x0001 - flash fired 0x0005 - strobe return light not detected
  
-Title ExifFocalLength
+ExifFocalLength
 Actual focal length, in millimeters, of the lens. Conversion is not made to the focal length of a 35 millimeter film camera.
-Tag 0x920A 
-Type Rational Count1
+0x920A 
+Rational
+1
  
-Title ExifMakerNote
+ExifMakerNote
 Note tag. A tag used by manufacturers of EXIF writers to record information. The contents are up to the manufacturer.
-Tag 0x927C 
-Type Undefined CountAny
+0x927C 
+Undefined
+Any
  
-Title ExifUserComment
+ExifUserComment
 Comment tag. A tag used by EXIF users to write keywords or comments about the image besides those in Title ImageDescription and without the character-code limitations of the Title ImageDescription tag.
-Tag 0x9286 
-Type Undefined CountAny
+0x9286 
+Undefined
+Any
  
 The character code used in the Title ExifUserComment tag is identified based on an ID code in a fixed 8-byte area at the start of the tag data area. The unused portion of the area is padded with null characters (0). ID codes are assigned by means of registration. Because the type is not ASCII, it is not necessary to use a NULL terminator.
-Title ExifDTSubsec
+ExifDTSubsec
 Null-terminated character string that specifies a fraction of a second for the Title DateTime tag.
-Tag 0x9290 
-Type ASCII CountLength of the string including the NULL terminator
+0x9290 
+ASCII
+Length of the string including the NULL terminator
  
-Title ExifDTOrigSS
+ExifDTOrigSS
 Null-terminated character string that specifies a fraction of a second for the Title ExifDTOrig tag.
-Tag 0x9291 
-Type ASCII NLength of the string including the NULL terminator
+0x9291 
+ASCII NLength of the string including the NULL terminator
  
-Title ExifDTDigSS
+ExifDTDigSS
 Null-terminated character string that specifies a fraction of a second for the Title ExifDTDigitized tag.
-Tag 0x9292 TypeASCII NLength of the string including the NULL terminator
+0x9292\r\nASCII NLength of the string including the NULL terminator
  
-Title ExifFPXVer
+ExifFPXVer
 FlashPix format version supported by an FPXR file. If the FPXR function supports FlashPix format version 1.0, this is indicated similarly to Title ExifVer by recording 0100 as a 4-byte ASCII string. Because the type is Title TypeUndefined, there is no NULL terminator.
-Tag 0xA000 
-Type Undefined Count4 Default0100 0100 - FlashPix format version 1.0 Other - reserved
+0xA000 
+Undefined
+4 Default0100 0100 - FlashPix format version 1.0 Other - reserved
  
-Title ExifColorSpace
+ExifColorSpace
 Color space specifier. Normally sRGB (=1) is used to define the color space based on the PC monitor conditions and environment. If a color space other than sRGB is used, Uncalibrated (=0xFFFF) is set. Image data recorded as Uncalibrated can be treated as sRGB when it is converted to FlashPix.
-Tag 0xA001 
-Type Short Count1 0x1 - sRGB 0xFFFF - uncalibrated Other - reserved
+0xA001 
+Short
+1 0x1 - sRGB 0xFFFF - uncalibrated Other - reserved
  
-Title ExifPixXDim
+ExifPixXDim
 Information specific to compressed data. When a compressed file is recorded, the valid width of the meaningful image must be recorded in this tag, whether or not there is padding data or a restart marker. This tag should not exist in an uncompressed file.
-Tag 0xA002 
-Type Short or Title TypeLong Count1
+0xA002 
+Short or Title
+Long
+1
  
-Title ExifPixYDim
+ExifPixYDim
 Information specific to compressed data. When a compressed file is recorded, the valid height of the meaningful image must be recorded in this tag whether or not there is padding data or a restart marker. This tag should not exist in an uncompressed file. Because data padding is unnecessary in the vertical direction, the number of lines recorded in this valid image height tag will be the same as that recorded in the SOF.
-Tag 0xA003 
-Type Short or Title TypeLong Count1
+0xA003 
+Short or Title
+Long
+1
  
-Title ExifRelatedWav
+ExifRelatedWav
 The name of an audio file related to the image data. The only relational information recorded is the EXIF audio file name and extension (an ASCII string that consists of 8 characters plus a period (.), plus 3 characters). The path is not recorded. When you use this tag, audio files must be recorded in conformance with the EXIF audio format. Writers can also store audio data within APP2 as FlashPix extension stream data.
-Tag 0xA004 
-Type ASCII Count13
+0xA004 
+ASCII
+13
  
-Title ExifInterop
+ExifInterop
 Offset to a block of property items that contain interoperability information.
-Tag 0xA005 
-Type Long Count1
+0xA005 
+Long
+1
  
-Title ExifFlashEnergy
+ExifFlashEnergy
 Strobe energy, in Beam Candle Power Seconds (BCPS), at the time the image was captured.
-Tag 0xA20B 
-Type Rational Count1
+0xA20B 
+Rational
+1
  
-Title ExifSpatialFR
+ExifSpatialFR
 Camera or input device spatial frequency table and SFR values in the image width, image height, and diagonal direction, as specified in ISO 12233.
-Tag 0xA20C 
-Type Undefined CountAny
+0xA20C 
+Undefined
+Any
  
-Title ExifFocalXRes
+ExifFocalXRes
 Number of pixels in the image width (x) direction per unit on the camera focal plane. The unit is specified in Title ExifFocalResUnit.
-Tag 0xA20E 
-Type Rational Count1
+0xA20E 
+Rational
+1
  
-Title ExifFocalYRes
+ExifFocalYRes
 Number of pixels in the image height (y) direction per unit on the camera focal plane. The unit is specified in Title ExifFocalResUnit.
-Tag 0xA20F 
-Type Rational Count1
+0xA20F 
+Rational
+1
  
-Title ExifFocalResUnit
+ExifFocalResUnit
 Unit of measure for Title ExifFocalXRes and Title ExifFocalYRes.
-Tag 0xA210 
-Type Short Count1 2 - inch 3 - centimeter
+0xA210 
+Short
+1 2 - inch 3 - centimeter
  
-Title ExifSubjectLoc
+ExifSubjectLoc
 Location of the main subject in the scene. The value of this tag represents the pixel at the center of the main subject relative to the left edge. The first value indicates the column number, and the second value indicates the row number.
-Tag 0xA214 
-Type Short Count2
+0xA214 
+Short
+2
  
-Title ExifExposureIndex
+ExifExposureIndex
 Exposure index selected on the camera or input device at the time the image was captured.
-Tag 0xA215 
-Type Rational Count1
+0xA215 
+Rational
+1
  
-Title ExifSensingMethod
+ExifSensingMethod
 Image sensor type on the camera or input device.
-Tag 0xA217 
-Type Short Count1 1 - not defined 2 - one-chip color area sensor 3 - two-chip color area sensor 4 - three-chip color area sensor 5 - color sequential area sensor 7 - trilinear sensor 8 - color sequential linear sensor Other - reserved
+0xA217 
+Short
+1 1 - not defined 2 - one-chip color area sensor 3 - two-chip color area sensor 4 - three-chip color area sensor 5 - color sequential area sensor 7 - trilinear sensor 8 - color sequential linear sensor Other - reserved
  
-Title ExifFileSource
+ExifFileSource
 The image source. If a DSC recorded the image, the value of this tag is 3.
-Tag 0xA300 
-Type Undefined Count1
+0xA300 
+Undefined
+1
  
-Title ExifSceneType
+ExifSceneType
 The type of scene. If a DSC recorded the image, the value of this tag must be set to 1, indicating that the image was directly photographed.
-Tag 0xA301 
-Type Undefined Count1
+0xA301 
+Undefined
+1
  
-Title ExifCfaPattern
+ExifCfaPattern
 The color filter array (CFA) geometric pattern of the image sensor when a one-chip color area sensor is used. It does not apply to all sensing methods.
-Tag 0xA302 
-Type Undefined CountAny
+0xA302 
+Undefined
+Any

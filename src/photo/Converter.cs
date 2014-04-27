@@ -1,35 +1,29 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
+using System.Linq;
 using System.Text;
 
 namespace photo
 {
     public static class Converter
     {
-        public static Dictionary<int, KeyValuePair<string, string>> IdNameDescription = new Dictionary
-            <int, KeyValuePair<string, string>>
-                                                                                            {
-                                                                                                {
-                                                                                                    0x0132,
-                                                                                                    new KeyValuePair
-                                                                                                    <string, string>(
-                                                                                                    "DateTime",
-                                                                                                    "Date and time the image was created")
-                                                                                                }
-                                                                                            };
+        public static Dictionary<int, ExifItem> Items = Init();
+
+        public static Dictionary<int, ExifItem> Init()
+        {
+            return TextHelper.GetItems().ToDictionary(x=>x.Id);
+        } 
 
         public static ExifItem ConvertTo(this PropertyItem item)
         {
-            KeyValuePair<string, string> values;
-            bool exist = IdNameDescription.TryGetValue(item.Id, out values);
-            return new ExifItem
-                       {
-                           Id = item.Id,
-                           Title = exist ? values.Key : null,
-                           Description = exist ? values.Value : null,
-                           Value = item.Value.ConvertTo((ExifType) item.Type, item.Len),
-                       };
+            ExifItem result;
+            if(Items.TryGetValue(item.Id, out result))
+            {
+                result.Value = item.Value.ConvertTo((ExifType) item.Type, item.Len);
+                result.Lenght = item.Len;
+            }
+            return result;
         }
 
         public static object ConvertTo(this byte[] bytes, ExifType type, int len)
