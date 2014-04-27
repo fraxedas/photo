@@ -38,7 +38,7 @@ namespace photo
 
             foreach (var item in propItems)
             {
-                builder.AppendLine(string.Format("{0} - {1} = {2}", item.Id, item.Title, item.Value));
+                builder.AppendLine(string.Format("{0} - {1} = {2}", item.Id.ToString("X"), item.Title, item.Value));
             }
 
             return builder.ToString();

@@ -161,13 +161,13 @@ Rational
 1
  
 NewSubfileType
- of data in a subfile.
+Type of data in a subfile.
 0x00FE 
 Long
 1
  
 SubfileType
- of data in a subfile.
+Type of data in a subfile.
 0x00FF 
 Short
 1
@@ -175,14 +175,12 @@ Short
 ImageWidth
 Number of pixels per row.
 0x0100 
-Short or Title
 Long
 1
  
 ImageHeight
 Number of pixel rows.
 0x0101 
-Short or Title
 Long
 1
  
@@ -255,7 +253,6 @@ Length of the string including the NULL terminator
 StripOffsets
 For each strip, the byte offset of that strip. See also Title RowsPerStrip and Title StripBytesCount.
 0x0111 
-Short or Title
 Long
 Number of strips
  
@@ -274,14 +271,12 @@ Short
 RowsPerStrip
 Number of rows per strip. See also Title StripBytesCount and Title StripOffsets.
 0x0116 
-Short or Title
 Long
 1
  
 StripBytesCount
 For each strip, the total number of bytes in that strip.
 0x0117 
-Short or Title
 Long
 Number of strips
  
@@ -411,7 +406,7 @@ ASCII
 Length of the string including the NULL terminator
  
 Predictor
- of prediction scheme that was applied to the image data before the encoding scheme was applied.
+Type of prediction scheme that was applied to the image data before the encoding scheme was applied.
 0x013D 
 Short
 1
@@ -443,14 +438,12 @@ Short
 TileWidth
 Number of pixel columns in each tile.
 0x0142 
-Short or Title
 Long
 1
  
 TileLength
 Number of pixel rows in each tile.
 0x0143 
-Short or Title
 Long
 1
  
@@ -463,7 +456,6 @@ Number of tiles
 TileByteCounts
 For each tile, the number of bytes in that tile.
 0x0145 
-Short or Title
 Long
 Number of tiles
  
@@ -488,7 +480,6 @@ Short
 DotRange
 Color component values that correspond to a 0 percent dot and a 100 percent dot.
 0x0150 
-Byte or Title
 Short
 2 or 2×Title SamplesPerPixel
  
@@ -619,11 +610,7 @@ ASCII
 Length of the string including the NULL terminator
  
 SRGBRenderingIntent
-How the image should be displayed as defined by the International Color Consortium (ICC). If a GDI+  Image object is constructed with the useEmbeddedColorManagement parameter set to TRUE, then GDI+ renders the image according to the specified rendering intent. The intent can be set to perceptual, relative colorimetric, saturation, or absolute colorimetric.
-Perceptual intent, which is suitable for photographs, gives good adaptation to the display device gamut at the expense of colorimetric accuracy.
-Relative colorimetric intent is suitable for images (for example, logos) that require color appearance matching that is relative to the display device white point.
-Saturation intent, which is suitable for charts and graphs, preserves saturation at the expense of hue and lightness.
-Absolute colorimetric intent is suitable for proofs (previews of images destined for a different display device) that require preservation of absolute colorimetry.
+How the image should be displayed as defined by the International Color Consortium (ICC). If a GDI+  Image object is constructed with the useEmbeddedColorManagement parameter set to TRUE, then GDI+ renders the image according to the specified rendering intent. The intent can be set to perceptual, relative colorimetric, saturation, or absolute colorimetric. Perceptual intent, which is suitable for photographs, gives good adaptation to the display device gamut at the expense of colorimetric accuracy. Relative colorimetric intent is suitable for images (for example, logos) that require color appearance matching that is relative to the display device white point. Saturation intent, which is suitable for charts and graphs, preserves saturation at the expense of hue and lightness. Absolute colorimetric intent is suitable for proofs (previews of images destined for a different display device) that require preservation of absolute colorimetry.
 0x0303 
 BYTE
 1 0 - perceptual 1 - relative colorimetric 2 - saturation 3 - absolute colorimetric
@@ -799,14 +786,12 @@ Variable
 ThumbnailImageWidth
 Number of pixels per row in the thumbnail image.
 0x5020 
-Short or Title
 Long
 1
  
 ThumbnailImageHeight
 Number of pixel rows in the thumbnail image.
 0x5021 
-Short or Title
 Long
 1
  
@@ -849,7 +834,6 @@ Length of the string including the NULL terminator
 ThumbnailStripOffsets
 For each strip in the thumbnail image, the byte offset of that strip. See also Title ThumbnailRowsPerStrip and Title ThumbnailStripBytesCount.
 0x5028 
-Short or Title
 Long
 Number of strips
  
@@ -868,24 +852,24 @@ Short
 ThumbnailRowsPerStrip
 Number of rows per strip in the thumbnail image. See also Title ThumbnailStripBytesCount and Title ThumbnailStripOffsets.
 0x502B 
-Short or Title
 Long
 1
  
 ThumbnailStripBytesCount
 For each thumbnail image strip, the total number of bytes in that strip.
 0x502C 
-Short or Title
 Long
 Number of strips in the thumbnail image
  
 ThumbnailResolutionX
 Thumbnail resolution in the width direction. The resolution unit is given in Title ThumbnailResolutionUnit.
 0x502D
+1
  
 ThumbnailResolutionY
 Thumbnail resolution in the height direction. The resolution unit is given in Title ThumbnailResolutionUnit.
 0x502E
+1
  
 ThumbnailPlanarConfig
 Whether pixel components in the thumbnail image are recorded in chunky or planar format. See also Title PlanarConfig.
@@ -1104,15 +1088,13 @@ ASCII
 20
  
 ExifDTDigitized
-Date and time when the image was stored as digital data. If, for example, an image was captured by DSC and at the same time the file was recorded, then DateTimeOriginal and DateTimeDigitized will have the same contents.
-The format is YYYY:MM:DD HH:MM:SS with time shown in 24-hour format and the date and time separated by one blank character (0x2000). The character string length is 20 bytes including the NULL terminator. When the field is empty, it is treated as unknown.
+Date and time when the image was stored as digital data. If, for example, an image was captured by DSC and at the same time the file was recorded, then DateTimeOriginal and DateTimeDigitized will have the same contents. The format is YYYY:MM:DD HH:MM:SS with time shown in 24-hour format and the date and time separated by one blank character (0x2000). The character string length is 20 bytes including the NULL terminator. When the field is empty, it is treated as unknown.
 0x9004 
 ASCII
 20
  
 ExifCompConfig
-Information specific to compressed data. The channels of each component are arranged in order from the first component to the fourth. For uncompressed data, the data arrangement is given in the Title PhotometricInterp tag.
-However, because Title PhotometricInterp can only express the order of Y, Cb, and Cr, this tag is provided for cases when compressed data uses components other than Y, Cb, and Cr and to support other sequences.
+Information specific to compressed data. The channels of each component are arranged in order from the first component to the fourth. For uncompressed data, the data arrangement is given in the Title PhotometricInterp tag. However, because Title PhotometricInterp can only express the order of Y, Cb, and Cr, this tag is provided for cases when compressed data uses components other than Y, Cb, and Cr and to support other sequences.
 0x9101 
 Undefined
 4 Default4 5 6 0 (if RGB uncompressed) 1 2 3 0 (other cases) 0 - does not exist 1 - Y 2 - Cb 3 - Cr 4 - R 5 - G 6 - B Other - reserved
@@ -1166,7 +1148,7 @@ Short
 1 Default0 0 - unknown 1 - Average 2 - CenterWeightedAverage 3 - Spot 4 - MultiSpot 5 - Pattern 6 - Partial 7 to 254 - reserved 255 - other
  
 ExifLightSource
- of light source.
+Type of light source.
 0x9208 
 Short
 1 Default0 0 - unknown 1 - Daylight 2 - Flourescent 3 - Tungsten 17 - Standard Light A 18 - Standard Light B 19 - Standard Light C 20 - D55 21 - D65 22 - D75 23 to 254 - reserved 255 - other
@@ -1190,12 +1172,11 @@ Undefined
 Any
  
 ExifUserComment
-Comment tag. A tag used by EXIF users to write keywords or comments about the image besides those in Title ImageDescription and without the character-code limitations of the Title ImageDescription tag.
+Comment tag. A tag used by EXIF users to write keywords or comments about the image besides those in Title ImageDescription and without the character-code limitations of the Title ImageDescription tag. The character code used in the Title ExifUserComment tag is identified based on an ID code in a fixed 8-byte area at the start of the tag data area. The unused portion of the area is padded with null characters (0). ID codes are assigned by means of registration. Because the type is not ASCII, it is not necessary to use a NULL terminator.
 0x9286 
 Undefined
 Any
  
-The character code used in the Title ExifUserComment tag is identified based on an ID code in a fixed 8-byte area at the start of the tag data area. The unused portion of the area is padded with null characters (0). ID codes are assigned by means of registration. Because the type is not ASCII, it is not necessary to use a NULL terminator.
 ExifDTSubsec
 Null-terminated character string that specifies a fraction of a second for the Title DateTime tag.
 0x9290 
@@ -1206,10 +1187,13 @@ ExifDTOrigSS
 Null-terminated character string that specifies a fraction of a second for the Title ExifDTOrig tag.
 0x9291 
 ASCII NLength of the string including the NULL terminator
+1
  
 ExifDTDigSS
 Null-terminated character string that specifies a fraction of a second for the Title ExifDTDigitized tag.
-0x9292\r\nASCII NLength of the string including the NULL terminator
+0x9292
+ASCII NLength of the string including the NULL terminator
+1
  
 ExifFPXVer
 FlashPix format version supported by an FPXR file. If the FPXR function supports FlashPix format version 1.0, this is indicated similarly to Title ExifVer by recording 0100 as a 4-byte ASCII string. Because the type is Title TypeUndefined, there is no NULL terminator.
@@ -1226,14 +1210,12 @@ Short
 ExifPixXDim
 Information specific to compressed data. When a compressed file is recorded, the valid width of the meaningful image must be recorded in this tag, whether or not there is padding data or a restart marker. This tag should not exist in an uncompressed file.
 0xA002 
-Short or Title
 Long
 1
  
 ExifPixYDim
 Information specific to compressed data. When a compressed file is recorded, the valid height of the meaningful image must be recorded in this tag whether or not there is padding data or a restart marker. This tag should not exist in an uncompressed file. Because data padding is unnecessary in the vertical direction, the number of lines recorded in this valid image height tag will be the same as that recorded in the SOF.
 0xA003 
-Short or Title
 Long
 1
  

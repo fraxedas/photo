@@ -18,11 +18,17 @@ namespace photo
         public static ExifItem ConvertTo(this PropertyItem item)
         {
             ExifItem result;
-            if(Items.TryGetValue(item.Id, out result))
+            if (!Items.TryGetValue(item.Id, out result))
             {
-                result.Value = item.Value.ConvertTo((ExifType) item.Type, item.Len);
-                result.Lenght = item.Len;
+                result = new ExifItem
+                             {
+                                 Id = item.Id
+                             };
             }
+
+            result.Value = item.Value.ConvertTo((ExifType)item.Type, item.Len);
+            result.Lenght = item.Len;
+
             return result;
         }
 
