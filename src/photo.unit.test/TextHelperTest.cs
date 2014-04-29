@@ -3,11 +3,11 @@ using NUnit.Framework;
 
 namespace photo.unit.test
 {
-    [TestFixture()]
+    [TestFixture]
     public class TextHelperTest
     {
         [Test]
-        public void Test_initi_exif_dictionary()
+        public void Test_get_items()
         {
             var list = TextHelper.GetItems();
             Assert.That(list, Is.Not.Null);

@@ -1,36 +1,29 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace photo
 {
     public class TextHelper
     {
-        private const string Pattern = @"(?<title>^.+)(\r\n)(?<description>^.+)(\r\n)(?<id>^.+)(\r\n)(?<type>^.+)(\r\n)(?<lenght>^.+)(\s){1,2}";
+        private const string Pattern = @"(?<title>^.+)(\r\n)(?<description>^.+)(\r\n)(?<id>^.+)(\r\n)(?<type>^.+)(\r\n)(?<lenght>^.+)(\s){2}";
 
         private static readonly Regex Regex = new Regex(Pattern, RegexOptions.Compiled | RegexOptions.Multiline);
 
-        public static List<ExifItem> GetItems()
+        public static IEnumerable<ExifItem> GetItems()
         {
-            var result = new List<ExifItem>();
-            foreach (Match match in Regex.Matches(Properties.Resources.Tags))
-            {
-                var title = match.Groups["title"];
-                var description = match.Groups["description"];
-                var id = match.Groups["id"];
-
-                var exif = new ExifItem
+            return (from Match match in Regex.Matches(Properties.Resources.Tags)
+                    let title = match.Groups["title"]
+                    let description = match.Groups["description"]
+                    let id = match.Groups["id"]
+                    select new ExifItem
                                {
-                                   Title = title.Value,
-                                   Description = description.Value,
+                                   Title = title.Value, 
+                                   Description = description.Value, 
                                    Id = int.Parse(id.Value.Substring(2), NumberStyles.HexNumber)
-                               };
-                result.Add(exif);
-            }
-
-            return result;
+                               });
         }
-
     }
 }

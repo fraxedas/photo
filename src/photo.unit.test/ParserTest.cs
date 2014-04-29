@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using NUnit.Framework;
 
 namespace photo.unit.test
@@ -19,11 +21,21 @@ namespace photo.unit.test
         private readonly Parser _parser;
 
         [Test]
-        public void Test_parse_return_some_data()
+        public void Test_parse_path_return_some_data()
         {
-            string data = _parser.Parse(_path);
-            Console.Out.WriteLine(data);
+            var data = _parser.Parse(_path);
+            data.ToList().ForEach(Console.WriteLine);
             Assert.That(data, Is.Not.Null);
+            Assert.That(data, Is.Not.Empty);
+        }
+
+        [Test]
+        public void Test_parse_stream_return_some_data()
+        {
+            var data = _parser.Parse(new FileStream(_path,FileMode.Open));
+            data.ToList().ForEach(Console.WriteLine);
+            Assert.That(data, Is.Not.Null);
+            Assert.That(data, Is.Not.Empty);
         }
     }
 }
