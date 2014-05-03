@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo", "photo.csproj", "{13800742-9FFF-4ED1-8D5D-259EC188BD6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo", "photo\photo.csproj", "{13800742-9FFF-4ED1-8D5D-259EC188BD6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.unit.test", "..\photo.unit.test\photo.unit.test.csproj", "{E347BCBC-AC0F-4973-824D-A9100B7F70C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.unit.test", "photo.unit.test\photo.unit.test.csproj", "{E347BCBC-AC0F-4973-824D-A9100B7F70C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
