@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>photo.exif</id>
+    <version>1.1.0</version>
+    <title>Photo Exif Parser</title>
+    <authors>Oscar Fraxedas</authors>
+    <owners>ofraxedas</owners>
+    <projectUrl>https://github.com/fraxedas/photo</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Reads EXIF data (exchangeable image file format) from image files</description>
+    <releaseNotes>Some code refactoring was made with namespace adjustments</releaseNotes>
+    <tags>exif photo jpeg jpg</tags>
+  </metadata>
+</package>
