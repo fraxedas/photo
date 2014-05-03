@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 
-namespace photo
+namespace photo.exif
 {
     public class Parser
     {

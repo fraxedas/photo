@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 
-namespace photo
+namespace photo.exif
 {
     public static class Converter
     {

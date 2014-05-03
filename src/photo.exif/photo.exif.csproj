@@ -7,8 +7,8 @@
     <ProjectGuid>{13800742-9FFF-4ED1-8D5D-259EC188BD6B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>photo</RootNamespace>
-    <AssemblyName>photo</AssemblyName>
+    <RootNamespace>photo.exif</RootNamespace>
+    <AssemblyName>photo.exif</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

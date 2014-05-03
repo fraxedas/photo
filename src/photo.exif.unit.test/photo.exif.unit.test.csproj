@@ -6,8 +6,8 @@
     <ProjectGuid>{E347BCBC-AC0F-4973-824D-A9100B7F70C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>photo.unit.test</RootNamespace>
-    <AssemblyName>photo.unit.test</AssemblyName>
+    <RootNamespace>photo.exif.unit.test</RootNamespace>
+    <AssemblyName>photo.exif.unit.test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,9 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\photo\photo.csproj">
+    <ProjectReference Include="..\photo.exif\photo.exif.csproj">
       <Project>{13800742-9fff-4ed1-8d5d-259ec188bd6b}</Project>
-      <Name>photo</Name>
+      <Name>photo.exif</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-namespace photo
+namespace photo.exif
 {
     public class ExifItem
     {

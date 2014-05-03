@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using NUnit.Framework;
 
-namespace photo.unit.test
+namespace photo.exif.unit.test
 {
     [TestFixture("Images/Canon PowerShot SX500 IS.JPG")]
     [TestFixture("Images/Nikon COOLPIX P510.JPG")]

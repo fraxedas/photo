@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace photo.unit.test
+namespace photo.exif.unit.test
 {
     [TestFixture]
     public class TextHelperTest

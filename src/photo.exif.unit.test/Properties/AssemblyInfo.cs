@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("photo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Photo EXIF tester")]
+[assembly: AssemblyDescription("Tests for the Photo EXIF project")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("photo")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2013")]
+[assembly: AssemblyCompany("Oscar Fraxedas")]
+[assembly: AssemblyProduct("photo.exif.unit.test")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("353e59d2-03f9-40e3-833a-33e272a03c01")]
+[assembly: Guid("4f38854b-2721-4fc0-ad9f-aa5419fd80d4")]
 
 // Version information for an assembly consists of the following four values:
 //

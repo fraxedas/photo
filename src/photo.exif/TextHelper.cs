@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace photo
+namespace photo.exif
 {
     public class TextHelper
     {
