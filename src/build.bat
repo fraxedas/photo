@@ -4,6 +4,7 @@ Echo "Upgrade to the latest version of NuGet.exe"
 Echo "Create and buils the NuGet Package"
 cd photo.exif
 ..\.nuget\NuGet Pack photo.exif.csproj -Prop Platform=AnyCPU
+..\.nuget\NuGet Pack photo.exif.csproj -Symbols -Prop Platform=AnyCPU
 cd ..
 
 Echo "Publish your package"
