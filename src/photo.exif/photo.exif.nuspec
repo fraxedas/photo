@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>photo.exif</id>
-    <version>1.1.4</version>
+    <version>$version$</version>
     <title>Photo Exif Parser</title>
     <authors>Oscar Fraxedas</authors>
     <owners>ofraxedas</owners>
