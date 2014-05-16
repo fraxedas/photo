@@ -5,34 +5,30 @@ using NUnit.Framework;
 
 namespace photo.exif.unit.test
 {
-    [TestFixture("Images/Canon PowerShot SX500 IS.JPG")]
-    [TestFixture("Images/Nikon COOLPIX P510.JPG")]
-    [TestFixture("Images/Panasonic Lumix DMC-FZ200.JPG")]
-    [TestFixture("Images/Samsung SIII.jpg")]
     public class ParserTest
     {
-        public ParserTest(string path)
+        public ParserTest()
         {
-            _path = path;
             _parser = new Parser();
         }
 
-        private readonly string _path;
         private readonly Parser _parser;
 
-        [Test]
-        public void Test_parse_path_return_some_data()
+        static string[] paths = Directory.GetFiles( Environment.CurrentDirectory, "*.jpg", SearchOption.AllDirectories);
+
+        [Test, TestCaseSource("paths")]
+        public void Test_parse_path_return_some_data(string path)
         {
-            var data = _parser.Parse(_path);
+            var data = _parser.Parse(path);
             data.ToList().ForEach(Console.WriteLine);
             Assert.That(data, Is.Not.Null);
             Assert.That(data, Is.Not.Empty);
         }
 
-        [Test]
-        public void Test_parse_stream_return_some_data()
+        [Test, TestCaseSource("paths")]
+        public void Test_parse_stream_return_some_data(string path)
         {
-            var data = _parser.Parse(new FileStream(_path,FileMode.Open));
+            var data = _parser.Parse(new FileStream(path,FileMode.Open));
             data.ToList().ForEach(Console.WriteLine);
             Assert.That(data, Is.Not.Null);
             Assert.That(data, Is.Not.Empty);
