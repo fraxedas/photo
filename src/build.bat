@@ -9,5 +9,19 @@ cd ..
 
 Echo "Publish your package"
 cd photo.exif
-..\.nuget\NuGet Push photo.exif.*.nupkg
+REM ..\.nuget\NuGet Push photo.exif.*.nupkg
+copy *.nupkg C:\Nuget
+cd ..
+
+
+Echo "Create and buils the NuGet Package"
+cd photo.exif.unit.test
+DEL /F /S /Q /A *.nupkg
+..\.nuget\NuGet Pack photo.exif.unit.test.csproj -Prop Platform=AnyCPU
+cd ..
+
+Echo "Publish your package"
+cd photo.exif.unit.test
+REM ..\.nuget\NuGet Push photo.exif.*.nupkg
+copy *.nupkg C:\Nuget
 cd ..
