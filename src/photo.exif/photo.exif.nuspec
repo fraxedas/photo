@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Reads EXIF data (exchangeable image file format) from image files</description>
     <releaseNotes>Some code refactoring was made with namespace adjustments</releaseNotes>
+    <copyright>Copyright 2014</copyright>
     <tags>exif photo jpeg jpg</tags>
   </metadata>
 </package>

@@ -1,15 +1,19 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>photo.exif.unit.test</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <title>Photo Exif Parser Tests</title>
+    <authors>Oscar Fraxedas</authors>
+    <owners>ofraxedas</owners>
+    <projectUrl>https://github.com/fraxedas/photo</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <description>Test for the photo.exif package</description>
+    <releaseNotes>Add dependency to photo.exif</releaseNotes>
     <copyright>Copyright 2014</copyright>
-    <tags>exif photo jpeg jpg test</tags>
+    <tags>exif photo jpeg jpg test nunit</tags>
+    <dependencies>
+      <dependency id="photo.exif" version="1.2.0" />
+    </dependencies>
   </metadata>
 </package>

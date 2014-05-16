@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Photo EXIF tester")]
-[assembly: AssemblyDescription("Tests for the Photo EXIF project")]
+[assembly: AssemblyTitle("Photo Exif tester")]
+[assembly: AssemblyDescription("Tests for the Photo Exif project")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Oscar Fraxedas")]
 [assembly: AssemblyProduct("photo.exif.unit.test")]
