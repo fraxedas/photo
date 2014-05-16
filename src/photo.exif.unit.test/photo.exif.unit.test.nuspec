@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/fraxedas/photo</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Test for the photo.exif package</description>
-    <releaseNotes>Add dependency to photo.exif</releaseNotes>
+    <releaseNotes>Add some images in the test folder to test the parser</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>exif photo jpeg jpg test nunit</tags>
     <dependencies>
