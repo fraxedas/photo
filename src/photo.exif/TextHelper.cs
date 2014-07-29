@@ -7,7 +7,7 @@ namespace photo.exif
 {
     public class TextHelper
     {
-        private const string Pattern = @"(?<title>^.+)(\r\n)(?<description>^.+)(\r\n)(?<id>^.+)(\r\n)(?<type>^.+)(\r\n)(?<lenght>^.+)(\s){2}";
+        private const string Pattern = @"(?<title>^.+)(\r\n)(?<description>^.+)(\r\n)(?<id>^.+)(\r\n)(?<type>^.+)(\r\n)(?<length>^.+)(\s){2}";
 
         private static readonly Regex Regex = new Regex(Pattern, RegexOptions.Compiled | RegexOptions.Multiline);
 
