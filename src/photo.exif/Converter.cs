@@ -27,7 +27,7 @@ namespace photo.exif
             }
 
             result.Value = item.Value.ConvertTo((ExifType)item.Type, item.Len);
-            result.Lenght = item.Len;
+            result.Length = item.Len;
 
             return result;
         }
