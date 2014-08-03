@@ -1,6 +1,9 @@
-Photo Exif    
+Photo Exif  
 ===============
-
+Available on nuget: https://www.nuget.org/packages/photo.exif
+```Batchfile
+    Install-Package photo.exif
+```
 Description  
 ===
 Extract Exchangeable image file format (Exif) from images
